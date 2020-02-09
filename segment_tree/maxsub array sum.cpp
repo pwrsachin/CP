@@ -26,14 +26,14 @@ struct segnode merge(segnode lt, segnode rt){
 struct segnode emptyn(){
     segnode node;
     node.sum = 0;
-    node.ssum = 0;
-    node.psum = 0;
-    node.msb = 0;
+    node.ssum = -9999999;
+    node.psum = -9999999;
+    node.msb = -9999999;
     return node;
   }
 
 
-struct segnode tree[4*5000];
+struct segnode tree[4*50000];
 
 void build(vector<int> &a, int v, int tl, int tr) {
   
