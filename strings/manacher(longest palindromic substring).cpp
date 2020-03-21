@@ -47,37 +47,47 @@ int main(){
 	
 	int l = 0, r = 0;
 	int pc = 0;
-	for(int i=0;i<=2*n;i++){
+	for(int i=1;i<=2*n;i++){
 		if(i<r){
-			
-			for(;i<r;i++){
-				pal[i] = min(pal[pc-i],r-i);
-			}
-			
+			pal[i] = min(pal[2*pc-i],r-i);
+				
 		}
 		else{
-			int lc = i-1, rc = i+1;
+			pal[i] = 0;
+		
+		}
+			
+			int lc = i-1-pal[i], rc = i+1+pal[i];
 			while(lc>=0 && rc<=2*n && mstr[lc]==mstr[rc]){
 				pal[i]++;
-				lc--;
-				rc++;
+				lc = i-1-pal[i];
+				rc = i+1+pal[i];
 			}
-			l = i-pal[i]+1;
-			r = i+pal[i]-1;
-			pc = i;
-		}
+			
+			if(r<i+pal[i]){
+				r = i+pal[i];
+				pc = i;
+			}	
+			
+		
+			
+		
+	
 	}
 	int maxl = 0;
 	int maxp = 0;
+	cout<<mstr<<"\n";
 	for(int i=0;i<=2*n;i++){
+		cout<<pal[i];
 		if(maxl<pal[i]){
 			maxl = pal[i];
 			maxp = i;
 		}
 	}
+	cout<<"\n";
 	cout<<maxl<<"\n";
-	int rl = maxp-pal[maxp]+1;
-	int rr = maxp+pal[maxp]-1;
+	int rl = maxp-pal[maxp];
+	int rr = maxp+pal[maxp];
 	
 	for(int i=rl;i<=rr;i++){
 		if(mstr[i]!='#'){
