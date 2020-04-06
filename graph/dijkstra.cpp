@@ -48,9 +48,10 @@ vector<bool> vis(maxn,false);
 vector< pair<int,ll> > graph[maxn]; 
 
 //time compexity O(n+ mlogm)//
-
+/*Note that Dijkstra’s algorithm will visit vertices in non-decreasing shortest-path weight since
+on each step it visits unvisited vertices that have the minimum shortest-path weight from s.*/
 int main(){
-	fastio;
+    fastio;
     int n,m;
     cin>>n>>m;
     for(int i=0;i<m;i++){
