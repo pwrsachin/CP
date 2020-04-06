@@ -68,7 +68,7 @@ int main(){
 	x *= c/g;
 	y *= c/g;
 	//printf("%d %d\n",x,y);
-	//for t->[t1,t2], x' = x + t*(b/g), y' = y + t*(a/g) for +ve x' & y'//
+	//for t->[t1,t2], x' = x + t*(b/g), y' = y - t*(a/g) for +ve x' & y'//
 	
 	double t1 = ceil((-1.0 * x * g)/b);
     double t2 = floor((1.0 * y * g)/a);
