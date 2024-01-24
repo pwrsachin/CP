@@ -46,7 +46,7 @@ void KMP(string s,string t){
     }
 }
 
-//FUNCTION TO OBTAIN LPS ARRAY//
+//FUNCTION TO OBTAIN LPS ARRAY lps[i] = the longest proper prefix of pat[0..i] which is also a suffix of pat[0..i]. 
 void prefix(string s){
     int n = s.size();
     int len = 0, i = 1;
